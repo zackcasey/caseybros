@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const projects = [
+  // Top row
+  { img: '/images/finished-entryway.png',  title: 'Finished Entryway' },
+  { img: '/images/closet-builtin.png',     title: 'Closet Built-In' },
+  { img: '/images/home-office-styled.png', title: 'Home Office' },
+  // Middle row
+  { img: '/images/dry-bar-blue.png',       title: 'Dry Bar', position: 'object-[center_15%]' },
+  { img: '/images/closet-shoe-rack.png',   title: 'Custom Closet Shoe Rack' },
+  { img: '/images/nook-bar-detail.png',    title: 'Dry Bar Detail' },
+  // Bottom row
+  { img: '/images/coffee-bar-lounge.png',  title: 'Coffee Bar Lounge' },
+  { img: '/images/dry-bar-wide.png',       title: 'Dry Bar Angle' },
+  { img: '/images/cabinet-details.png',    title: 'Wood Cabinet Detail' },
+];
+---
+
+<BaseLayout title="Portfolio | Casey Brothers Custom Builds">
+  <Nav />
+
+  <section class="pt-32 pb-16 bg-[#f5f0e8]">
+    <div class="mx-auto max-w-7xl px-6">
+      <p class="eyebrow mb-4">Our Work</p>
+      <h1 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight mb-4">Our Portfolio</h1>
+      <p class="text-[#4f4035] text-lg max-w-xl leading-relaxed">Every project is custom-designed for the homeowner and the space. Here's a look at some of our recent work.</p>
+    </div>
+  </section>
+
+  <section class="bg-[#f5f0e8] pb-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        {projects.map(p => (
+          <div class="group overflow-hidden rounded-sm bg-[#fdf9f5] border border-[#e6dfd4]">
+            <div class="overflow-hidden aspect-[4/3]">
+              <img src={p.img} alt={p.title} class={`w-full h-full object-cover group-hover:scale-103 transition-transform duration-500 ${p.position ?? 'object-center'}`}>
+            </div>
+            <div class="px-5 py-4">
+              <p class="font-display font-bold text-[#211810] text-sm tracking-wide">{p.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#211810] py-20">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Have a project in mind?</h2>
+      <p class="text-white/60 mb-8 leading-relaxed">We'd love to hear what you're thinking — no finished plans required.</p>
+      <a href="/contact" class="inline-flex items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-sm transition-colors">
+        Start Your Project
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

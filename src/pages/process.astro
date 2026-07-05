@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Concepting',
+    subtitle: 'Understanding your vision',
+    items: [
+      'Discussing the vision: goals, budget, style, and requirements',
+      'Assessing feasibility: site, zoning, codes, and constraints',
+      'Creating the concept: preliminary designs per your vision',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Planning',
+    subtitle: 'Building the roadmap',
+    items: [
+      'Developing plans: architectural and structural mockups',
+      'Finalization: material costs and timeline',
+      'Securing approvals: permits if needed',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Execution',
+    subtitle: 'Bringing it to life',
+    items: [
+      'Preparation and building: laying the foundation',
+      'Installation: materials installed with precision',
+      'The final product: quality checks and your approval',
+    ],
+  },
+];
+---
+
+<BaseLayout title="Our Process | Casey Brothers Custom Builds">
+  <Nav />
+
+  <section class="pt-32 pb-24 bg-[#211810]">
+    <div class="mx-auto max-w-7xl px-6">
+      <p class="eyebrow mb-4">How It Works</p>
+      <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Our Process</h1>
+      <p class="text-white/60 text-lg max-w-2xl leading-relaxed">Every project follows the same proven path. First we figure out what we're building. Then we plan how to build it. Then we execute. Breaking things into three phases keeps everyone aligned before work begins and throughout the build.</p>
+    </div>
+  </section>
+
+  <section class="bg-[#f5f0e8] py-24">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        {steps.map(step => (
+          <div class="bg-[#fdf9f5] rounded p-8 border border-[#e6dfd4]">
+            <p class="font-display text-5xl font-bold text-[#c8a96e]/30 mb-4">{step.number}</p>
+            <h2 class="font-display text-2xl font-bold text-[#211810] mb-1">{step.title}</h2>
+            <p class="eyebrow mb-6">{step.subtitle}</p>
+            <ul class="space-y-3">
+              {step.items.map(item => (
+                <li class="flex items-start gap-3 text-[#4f4035] text-sm leading-relaxed">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8a96e] flex-shrink-0 mt-1.5"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="/contact" class="inline-flex items-center gap-2 bg-[#211810] hover:bg-[#3d2e22] text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded transition-colors">
+          Start Your Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

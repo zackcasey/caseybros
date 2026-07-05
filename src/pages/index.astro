@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const testimonials = [
+  { quote: "My husband and I used Casey Brothers Custom Builds to build floor-to-ceiling shelving units for our walk-in closet and they did not disappoint. Their level of artistry and attention to detail is impeccable.", name: "Melissa G." },
+  { quote: "The Casey Brothers attention to detail is unmatched. From the initial design process to the final installation, the craftsmanship is flawless. It completely transformed our living room.", name: "Sidney H." },
+  { quote: "Not only have the Casey Brothers built beautiful pieces for my home but were able to make the entire process seamless from start to finish.", name: "Micayla M." },
+];
+
+const featured = [
+  {
+    title: 'Custom Entryway Mudroom',
+    description: 'A fully custom entryway design built around the family\'s daily routine — practical storage that feels polished from the moment you walk in.',
+    img: '/images/entryway-mudroom.png',
+    href: '/entryway-mudrooms',
+  },
+  {
+    title: 'Home Office Built-In',
+    description: 'A custom home office built-in that blends practical storage with open display shelving. Integrated lighting, clean lines, and a warm stained finish create a functional centerpiece for the space.',
+    img: '/images/home-office-builtin.png',
+    href: '/home-office',
+  },
+  {
+    title: 'Custom Coffee Bar',
+    description: 'Designed for two remote professionals, this custom coffee bar keeps everything within reach — creating a dedicated space for morning routines, midday breaks, and a more functional home office.',
+    img: '/images/dry-bar.png',
+    href: '/built-ins',
+  },
+];
+
+const reasons = [
+  {
+    title: 'Thoughtful Design',
+    body: 'Every project starts with your space, your life, and your goals — not a template.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+  },
+  {
+    title: 'Built for Your Home',
+    body: 'We design around your home\'s unique character — no off-the-shelf solutions, ever.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  },
+  {
+    title: 'Quality Craftsmanship',
+    body: 'Every joint, finish, and detail is executed with precision and care that lasts.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>`,
+  },
+  {
+    title: 'Collaborative Experience',
+    body: 'You\'ll work directly with Zack and Logan from first call through final installation.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>`,
+  },
+];
+---
+
+<BaseLayout title="Casey Brothers Custom Builds | Durham, NC">
+  <Nav />
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative h-screen min-h-[640px] flex items-end">
+    <img src="/images/hero-coffee-bar.jpg" alt="Custom coffee bar built-in" class="absolute inset-0 w-full h-full object-cover object-[center_65%]">
+    <div class="absolute inset-0 bg-gradient-to-t from-[#211810] via-[#211810]/30 to-transparent"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 pb-24 md:pb-32">
+      <p class="eyebrow mb-5">Durham, NC</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.05] max-w-2xl">
+        Love Every Corner<br>of Your Home.
+      </h1>
+      <p class="mt-6 text-white/70 text-lg max-w-lg leading-relaxed">
+        You don't need finished plans to create a beautiful space. Whether you're starting with a rough idea or a clear vision, we'll design and build something uniquely yours.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="/contact" class="inline-flex items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-sm px-8 py-4 rounded transition-colors">
+          Start Your Project
+        </a>
+        <a href="/design-services" class="inline-flex items-center border border-white/30 hover:border-white text-white font-semibold tracking-wider uppercase text-sm px-8 py-4 rounded transition-colors">
+          Design Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How We Work ──────────────────────────────────────────────── -->
+  <section class="bg-[#211810] py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-xl mb-16">
+        <p class="eyebrow mb-4">How We Work</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white leading-tight">How Would You Like to Work Together?</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="border border-white/10 rounded-sm p-10 hover:border-[#c8a96e]/40 transition-colors group">
+          <p class="eyebrow mb-3">Full Service</p>
+          <h3 class="font-display text-2xl font-bold text-white mb-4">Design &amp; Build</h3>
+          <p class="text-white/60 leading-relaxed mb-8">One team from concept to completion. We design, build, and install — so every detail is coordinated and nothing falls through the cracks.</p>
+          <ul class="space-y-2.5 text-white/60 text-sm mb-10">
+            {['Everything included in Design', 'Custom fabrication', 'Professional installation', 'One team from start to finish', 'A seamless experience'].map(item => (
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#c8a96e] flex-shrink-0"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/contact" class="inline-flex items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-xs px-7 py-3.5 rounded transition-colors">
+            Start Your Project
+          </a>
+        </div>
+
+        <div class="border border-white/10 rounded-sm p-10 hover:border-[#c8a96e]/40 transition-colors group">
+          <p class="eyebrow mb-3">Design Only</p>
+          <h3 class="font-display text-2xl font-bold text-white mb-4">Design Consultation</h3>
+          <p class="text-white/60 leading-relaxed mb-8">Starting with inspiration photos, a rough sketch, or just a feeling? We'll develop a custom design tailored to your home and your lifestyle.</p>
+          <ul class="space-y-2.5 text-white/60 text-sm mb-10">
+            {['Custom layouts', 'Concept renderings', 'Material & finish recommendations', 'Design revisions', 'A clear vision for your project'].map(item => (
+              <li class="flex items-center gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#c8a96e] flex-shrink-0"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/design-services" class="inline-flex items-center border border-[#c8a96e] text-[#c8a96e] hover:bg-[#c8a96e] hover:text-[#211810] font-bold tracking-widest uppercase text-xs px-7 py-3.5 rounded transition-colors">
+            Learn More
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Featured Projects ────────────────────────────────────────── -->
+  <section class="bg-[#f5f0e8] py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-xl mb-16">
+        <p class="eyebrow mb-4">Featured Projects</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight mb-5">See What's Possible.</h2>
+        <p class="text-[#4f4035] leading-relaxed">Explore a few of our favorite projects, each thoughtfully designed and built to fit the unique needs of the homeowner.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {featured.map(p => (
+          <a href={p.href} class="group block bg-[#fdf9f5] rounded-sm overflow-hidden border border-[#e6dfd4] hover:shadow-md transition-shadow">
+            <div class="overflow-hidden aspect-[4/3]">
+              <img src={p.img} alt={p.title} class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
+            </div>
+            <div class="p-7">
+              <h3 class="font-display text-lg font-bold text-[#211810] mb-2">{p.title}</h3>
+              <p class="text-[#4f4035] text-sm leading-relaxed">{p.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center">
+        <a href="/portfolio" class="inline-flex items-center gap-2 border border-[#211810] text-[#211810] hover:bg-[#211810] hover:text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-sm transition-colors">
+          View Full Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Why Casey Brothers ───────────────────────────────────────── -->
+  <section class="bg-[#faf7f2] py-28 border-t border-[#ede7db]">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-xl mb-16">
+        <p class="eyebrow mb-4">Our Approach</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight">Why Homeowners Choose Casey Brothers</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+        {reasons.map(r => (
+          <div>
+            <div class="text-[#c8a96e] mb-5" set:html={r.icon} />
+            <h3 class="font-display font-bold text-[#211810] text-lg mb-2">{r.title}</h3>
+            <p class="text-[#4f4035] text-sm leading-relaxed">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials ─────────────────────────────────────────────── -->
+  <section class="bg-[#211810] py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <p class="eyebrow text-center mb-4">Client Stories</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white text-center mb-16">Projects We're Proud Of. People We're Grateful For.</h2>
+
+      <!-- Featured testimonial -->
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-[#c8a96e] text-5xl leading-none mb-6 font-display">&ldquo;</p>
+        <p class="text-white text-xl md:text-2xl leading-relaxed font-display font-medium mb-8">{testimonials[0].quote}</p>
+        <p class="text-white/40 text-xs tracking-widest uppercase font-semibold">{testimonials[0].name}</p>
+      </div>
+
+      <!-- Supporting testimonials -->
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {testimonials.slice(1).map(t => (
+          <div class="border border-white/10 rounded-sm p-8">
+            <p class="text-[#c8a96e] text-3xl leading-none mb-4 font-display">&ldquo;</p>
+            <p class="text-white/75 leading-relaxed text-sm mb-6">{t.quote}</p>
+            <p class="text-white/40 text-xs tracking-widest uppercase font-semibold">{t.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ────────────────────────────────────────────────── -->
+  <section class="bg-[#f5f0e8] py-32">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <p class="eyebrow mb-5">Ready to Begin?</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight mb-6">Let's Create Something<br>You'll Love.</h2>
+      <p class="text-[#4f4035] text-lg leading-relaxed mb-10 max-w-xl mx-auto">Whether you're looking for design guidance or a fully custom build, we'd love to hear about your project.</p>
+      <a href="/contact" class="inline-flex items-center bg-[#211810] hover:bg-[#3d2e22] text-white font-bold tracking-widest uppercase text-sm px-10 py-4 rounded-sm transition-colors">
+        Start Your Project
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

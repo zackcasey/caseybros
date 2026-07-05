@@ -1,0 +1,267 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const reasons = [
+  {
+    title: 'Design With Confidence',
+    body: 'Know exactly what your space will look like before construction begins — no guesswork, no surprises.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  },
+  {
+    title: 'Built Around Your Home',
+    body: 'Every design is tailored to your home\'s dimensions, your style, and how you actually live in the space.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  },
+  {
+    title: 'Make Better Decisions',
+    body: 'Explore layouts, materials, and finishes before making costly commitments to construction.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>`,
+  },
+];
+
+const deliverables = [
+  'A custom design tailored to your home',
+  'Concept renderings',
+  'Layout recommendations',
+  'Material and finish suggestions',
+  'A clear vision for your project',
+  'Confidence to move forward',
+];
+
+const faqs = [
+  {
+    q: 'What should I bring to my consultation?',
+    a: 'Inspiration photos, Pinterest boards, rough measurements if you have them, and a general sense of what you want the space to do for you. We\'ll take care of the rest.',
+  },
+  {
+    q: 'Do I need to know exactly what I want?',
+    a: 'Not at all. Most clients come in with a general direction — or just a problem they want to solve. Part of our job is helping you figure out what\'s possible and what will work best for your home.',
+  },
+  {
+    q: 'What types of spaces do you design?',
+    a: 'We design custom built-ins, entryway mudrooms, home offices, closets, pantries, dry bars, entertainment centers, and other custom storage or carpentry projects.',
+  },
+  {
+    q: 'How long does the consultation last?',
+    a: 'Virtual consultations typically run 30–60 minutes. In-home consultations run 60–90 minutes, depending on the scope of the project and how many spaces you want to cover.',
+  },
+  {
+    q: 'Can I choose to build with Casey Brothers after my consultation?',
+    a: 'Absolutely. Many clients move from a design consultation directly into a full Design & Build project with us. If you decide to build, your consultation fee is applied toward your project total.',
+  },
+];
+---
+
+<BaseLayout title="Design Services | Casey Brothers Custom Builds">
+  <Nav />
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative min-h-[85vh] flex items-end">
+    <img
+      src="/images/stock-workshop.jpg"
+      alt="Design planning session"
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-[#211810] via-[#211810]/50 to-[#211810]/10"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 pb-24 md:pb-32 w-full">
+      <p class="eyebrow mb-5">Design Services</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.05] max-w-2xl mb-6">
+        The Design Blueprint
+      </h1>
+      <p class="text-white/70 text-lg max-w-lg leading-relaxed mb-10">
+        Every great project starts with a thoughtful plan. Whether you're beginning with inspiration photos, a rough sketch, or just an idea, we'll help transform your vision into a custom design tailored to your home.
+      </p>
+      <a href="/contact" class="inline-flex items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-sm transition-colors">
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Why a Design Blueprint ───────────────────────────────────── -->
+  <section class="bg-[#faf7f2] py-28 border-b border-[#ede7db]">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-xl mb-16">
+        <p class="eyebrow mb-4">Why It Matters</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight">Why Start With a Design Blueprint?</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-12">
+        {reasons.map(r => (
+          <div>
+            <div class="text-[#c8a96e] mb-5" set:html={r.icon} />
+            <h3 class="font-display font-bold text-[#211810] text-xl mb-3">{r.title}</h3>
+            <p class="text-[#4f4035] leading-relaxed">{r.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Consultation Options ─────────────────────────────────────── -->
+  <section class="bg-[#f5f0e8] py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-xl mb-16">
+        <p class="eyebrow mb-4">Choose Your Path</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight">Choose Your Consultation</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Virtual -->
+        <div class="bg-[#fdf9f5] border border-[#e6dfd4] rounded-sm p-10 flex flex-col">
+          <p class="eyebrow mb-4">Virtual</p>
+          <h3 class="font-display text-3xl font-bold text-[#211810] mb-2">Virtual Design Blueprint</h3>
+          <p class="text-[#c8a96e] font-display font-bold text-2xl mb-5">$199</p>
+          <p class="text-[#4f4035] leading-relaxed mb-8">Professional design guidance from anywhere. Perfect for homeowners who want a clear direction before committing to a full build.</p>
+          <ul class="space-y-3 text-[#4f4035] text-sm mb-10 flex-1">
+            {[
+              'Video consultation',
+              'Review of inspiration photos',
+              'Concept renderings',
+              'Layout recommendations',
+              'Material guidance',
+              'Personalized next steps',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-[#c8a96e] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/contact?service=virtual" class="inline-flex justify-center items-center border border-[#211810] text-[#211810] hover:bg-[#211810] hover:text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-sm transition-colors">
+            Book Virtual Consultation
+          </a>
+        </div>
+
+        <!-- In-Home -->
+        <div class="bg-[#211810] border border-[#211810] rounded-sm p-10 flex flex-col">
+          <p class="eyebrow mb-4">In-Home</p>
+          <h3 class="font-display text-3xl font-bold text-white mb-2">In-Home Design Blueprint</h3>
+          <p class="text-[#c8a96e] font-display font-bold text-2xl mb-5">$349</p>
+          <p class="text-white/60 leading-relaxed mb-8">A hands-on, collaborative design experience in your home — the most thorough way to develop a design that truly fits your space.</p>
+          <ul class="space-y-3 text-white/70 text-sm mb-10 flex-1">
+            {[
+              'In-home consultation',
+              'Measurements',
+              'Collaborative design session',
+              'Concept renderings',
+              'Material & finish recommendations',
+              'Personalized next steps',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-[#c8a96e] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/contact?service=in-home" class="inline-flex justify-center items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-sm transition-colors">
+            Book In-Home Consultation
+          </a>
+        </div>
+
+      </div>
+
+      <p class="text-center text-[#4f4035] text-sm mt-8">
+        If you choose to build with Casey Brothers, your consultation fee is applied toward your project total.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── What You'll Receive ──────────────────────────────────────── -->
+  <section class="bg-[#faf7f2] py-28 border-t border-[#ede7db]">
+    <div class="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-16 items-center">
+
+      <div>
+        <p class="eyebrow mb-4">Deliverables</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight mb-8">What You'll Walk Away With</h2>
+        <ul class="space-y-4">
+          {deliverables.map(item => (
+            <li class="flex items-start gap-4 text-[#4f4035] leading-relaxed">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#c8a96e] flex-shrink-0 mt-2.5"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="rounded-sm overflow-hidden">
+        <img
+          src="/images/stock-living-room.jpg"
+          alt="A beautifully designed custom space"
+          class="w-full h-96 object-cover"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────────────────── -->
+  <section class="bg-[#f5f0e8] py-28">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="mb-14 text-center">
+        <p class="eyebrow mb-4">FAQ</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="divide-y divide-[#ede7db]" id="faq">
+        {faqs.map((faq, i) => (
+          <div class="faq-item py-6">
+            <button
+              class="faq-trigger w-full text-left flex items-center justify-between gap-4 group"
+              aria-expanded="false"
+            >
+              <span class="font-display font-bold text-[#211810] text-lg group-hover:text-[#c8a96e] transition-colors">{faq.q}</span>
+              <svg class="faq-icon w-5 h-5 text-[#c8a96e] flex-shrink-0 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer hidden pt-4 pr-8">
+              <p class="text-[#4f4035] leading-relaxed">{faq.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ────────────────────────────────────────────────── -->
+  <section class="bg-[#211810] py-32">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <p class="eyebrow mb-5">Get Started</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+        Ready to Bring Your<br>Vision to Life?
+      </h2>
+      <p class="text-white/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+        Whether you're planning a custom built-in, mudroom, home office, or another unique space, every great project begins with a thoughtful design.
+      </p>
+      <a href="/contact" class="inline-flex items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-sm px-10 py-4 rounded-sm transition-colors">
+        Schedule Your Design Blueprint
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item   = trigger.closest('.faq-item')!;
+      const answer = item.querySelector('.faq-answer')!;
+      const icon   = trigger.querySelector('.faq-icon')!;
+      const open   = trigger.getAttribute('aria-expanded') === 'true';
+
+      // Close all others
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== item) {
+          other.querySelector('.faq-answer')!.classList.add('hidden');
+          other.querySelector('.faq-trigger')!.setAttribute('aria-expanded', 'false');
+          (other.querySelector('.faq-icon') as HTMLElement).style.transform = '';
+        }
+      });
+
+      trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+      answer.classList.toggle('hidden', open);
+      (icon as HTMLElement).style.transform = open ? '' : 'rotate(45deg)';
+    });
+  });
+</script>

@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const bullets = [
+  {
+    title: 'Design Blueprint consultations available anywhere',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>`,
+  },
+  {
+    title: 'Design + Build services',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0 mt-0.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>`,
+  },
+  {
+    title: 'Personalized recommendations',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0 mt-0.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>`,
+  },
+  {
+    title: 'Thoughtful guidance tailored to your project',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 flex-shrink-0 mt-0.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`,
+  },
+];
+
+const faqs = [
+  {
+    q: 'Do I need to know exactly what I want?',
+    a: 'Not at all. Many of our clients begin with inspiration photos, a rough sketch, or simply an idea they\'d like to explore. We\'ll help you figure out the rest.',
+  },
+  {
+    q: 'Can I work with Casey Brothers if I don\'t live nearby?',
+    a: 'Absolutely. Our Design Blueprint consultations are available virtually, allowing us to help homeowners no matter where they\'re located.',
+  },
+  {
+    q: 'What happens after I submit the form?',
+    a: 'We\'ll review your project, reach out to schedule a conversation, and help determine the best path forward based on your goals.',
+  },
+];
+---
+
+<BaseLayout title="Contact | Casey Brothers Custom Builds">
+  <Nav />
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative min-h-[70vh] flex items-end bg-[#211810]">
+    <img
+      src="/images/stock-tools.jpg"
+      alt="Design planning"
+      class="absolute inset-0 w-full h-full object-cover opacity-40"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-[#211810] via-[#211810]/60 to-transparent"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 pb-24 md:pb-32 w-full">
+      <p class="eyebrow mb-5">Contact</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.05] max-w-2xl mb-6">
+        Let's Talk About<br>Your Project.
+      </h1>
+      <p class="text-white/70 text-lg max-w-lg leading-relaxed mb-10">
+        Whether you're ready to build or simply exploring ideas, we'd love to hear what you're envisioning. Every great project starts with a conversation.
+      </p>
+      <a href="#contact-form" class="inline-flex items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-sm transition-colors">
+        Start Your Project
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Two-Column: What Happens Next + Form ─────────────────────── -->
+  <section id="contact-form" class="bg-[#f5f0e8] py-28 scroll-mt-16">
+    <div class="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-16 items-start">
+
+      <!-- Left -->
+      <div class="md:pt-2">
+        <p class="eyebrow mb-4">The Process</p>
+        <h2 class="font-display text-4xl font-bold text-[#211810] leading-tight mb-6">What Happens Next?</h2>
+        <p class="text-[#4f4035] leading-relaxed mb-10">
+          Once you reach out, we'll review your project and recommend the best next step — whether that's a Design Blueprint consultation, a Design + Build project, or simply answering your questions.
+        </p>
+
+        <ul class="space-y-5">
+          {bullets.map(b => (
+            <li class="flex items-start gap-4">
+              <span class="text-[#c8a96e]" set:html={b.icon} />
+              <span class="text-[#4f4035] leading-relaxed">{b.title}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-14 pt-10 border-t border-[#ede7db]">
+          <p class="font-semibold text-[#211810] text-xs tracking-widest uppercase mb-2">Email</p>
+          <a href="mailto:caseybrotherscustoms@gmail.com" class="text-[#4f4035] hover:text-[#211810] transition-colors">caseybrotherscustoms@gmail.com</a>
+          <p class="font-semibold text-[#211810] text-xs tracking-widest uppercase mt-5 mb-2">Phone</p>
+          <a href="tel:9192190107" class="text-[#4f4035] hover:text-[#211810] transition-colors">919-219-0107</a>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="bg-[#fdf9f5] border border-[#e6dfd4] rounded-sm p-10">
+        <h3 class="font-display text-2xl font-bold text-[#211810] mb-8">Tell Us About Your Project</h3>
+
+        <form
+          action="https://formspree.io/f/mkolyblg"
+          method="POST"
+          enctype="multipart/form-data"
+          class="space-y-6"
+        >
+          <div class="grid grid-cols-2 gap-5">
+            <div class="col-span-2 sm:col-span-1">
+              <label class="block text-xs font-semibold tracking-widest uppercase text-[#211810] mb-2">Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full border border-[#ede7db] rounded-sm px-4 py-3 text-sm text-[#211810] placeholder-[#8a7a6e] focus:outline-none focus:border-[#c8a96e] transition-colors bg-[#f5f0e8]"
+                placeholder="Your name"
+              >
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <label class="block text-xs font-semibold tracking-widest uppercase text-[#211810] mb-2">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full border border-[#ede7db] rounded-sm px-4 py-3 text-sm text-[#211810] placeholder-[#8a7a6e] focus:outline-none focus:border-[#c8a96e] transition-colors bg-[#f5f0e8]"
+                placeholder="your@email.com"
+              >
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-5">
+            <div class="col-span-2 sm:col-span-1">
+              <label class="block text-xs font-semibold tracking-widest uppercase text-[#211810] mb-2">Phone <span class="normal-case font-normal text-[#8a7a6e]">(optional)</span></label>
+              <input
+                type="tel"
+                name="phone"
+                class="w-full border border-[#ede7db] rounded-sm px-4 py-3 text-sm text-[#211810] placeholder-[#8a7a6e] focus:outline-none focus:border-[#c8a96e] transition-colors bg-[#f5f0e8]"
+                placeholder="Your phone number"
+              >
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <label class="block text-xs font-semibold tracking-widest uppercase text-[#211810] mb-2">Project Location</label>
+              <input
+                type="text"
+                name="location"
+                class="w-full border border-[#ede7db] rounded-sm px-4 py-3 text-sm text-[#211810] placeholder-[#8a7a6e] focus:outline-none focus:border-[#c8a96e] transition-colors bg-[#f5f0e8]"
+                placeholder="City, State"
+              >
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold tracking-widest uppercase text-[#211810] mb-2">I'm Interested In</label>
+            <select
+              name="service"
+              class="w-full border border-[#ede7db] rounded-sm px-4 py-3 text-sm text-[#211810] focus:outline-none focus:border-[#c8a96e] transition-colors bg-[#f5f0e8]"
+            >
+              <option value="">Select a service...</option>
+              <option value="design-blueprint">Design Blueprint</option>
+              <option value="design-build">Design + Build</option>
+              <option value="not-sure">Not Sure Yet</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold tracking-widest uppercase text-[#211810] mb-2">Tell Us About Your Project</label>
+            <textarea
+              name="message"
+              rows="5"
+              class="w-full border border-[#ede7db] rounded-sm px-4 py-3 text-sm text-[#211810] placeholder-[#8a7a6e] focus:outline-none focus:border-[#c8a96e] transition-colors bg-[#f5f0e8] resize-none"
+              placeholder="Describe your space, what you're hoping to achieve, or any questions you have..."
+            ></textarea>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold tracking-widest uppercase text-[#211810] mb-2">
+              Inspiration Photos <span class="normal-case font-normal text-[#8a7a6e]">(optional)</span>
+            </label>
+            <div class="border border-dashed border-[#c8a96e]/50 rounded-sm px-4 py-5 bg-[#f5f0e8] text-center">
+              <input type="file" name="photos" accept="image/*" multiple class="hidden" id="photo-upload">
+              <label for="photo-upload" class="cursor-pointer">
+                <svg class="w-6 h-6 text-[#c8a96e] mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <p class="text-sm text-[#4f4035]">Click to upload photos</p>
+                <p class="text-xs text-[#8a7a6e] mt-1">JPG, PNG, WEBP — multiple files supported</p>
+              </label>
+            </div>
+          </div>
+
+          <input type="hidden" name="_subject" value="New project inquiry — Casey Brothers Custom Builds">
+          <input type="text" name="_gotcha" class="hidden">
+
+          <button
+            type="submit"
+            class="w-full bg-[#211810] hover:bg-[#3d2e22] text-white font-bold tracking-widest uppercase text-sm py-4 rounded-sm transition-colors"
+          >
+            Start Your Project
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────────────────── -->
+  <section class="bg-[#faf7f2] py-28 border-t border-[#ede7db]">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="mb-14 text-center">
+        <p class="eyebrow mb-4">Quick Answers</p>
+        <h2 class="font-display text-4xl font-bold text-[#211810] leading-tight">Questions Before You Reach Out?</h2>
+      </div>
+
+      <div class="divide-y divide-[#ede7db]" id="faq">
+        {faqs.map(faq => (
+          <div class="faq-item py-6">
+            <button
+              class="faq-trigger w-full text-left flex items-center justify-between gap-4 group"
+              aria-expanded="false"
+            >
+              <span class="font-display font-bold text-[#211810] text-lg group-hover:text-[#c8a96e] transition-colors">{faq.q}</span>
+              <svg class="faq-icon w-5 h-5 text-[#c8a96e] flex-shrink-0 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer hidden pt-4 pr-8">
+              <p class="text-[#4f4035] leading-relaxed">{faq.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ────────────────────────────────────────────────── -->
+  <section class="bg-[#f5f0e8] py-32">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <p class="eyebrow mb-5">Let's Begin</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight mb-6">
+        Every Great Space Starts<br>With a Conversation.
+      </h2>
+      <p class="text-[#4f4035] text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+        Whether you're looking for design guidance, a complete Design + Build experience, or simply want to explore what's possible, we'd love to hear your ideas and help you take the next step.
+      </p>
+      <a href="/design-services" class="inline-flex items-center bg-[#211810] hover:bg-[#3d2e22] text-white font-bold tracking-widest uppercase text-sm px-10 py-4 rounded-sm transition-colors">
+        Schedule a Design Blueprint
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item   = trigger.closest('.faq-item')!;
+      const answer = item.querySelector('.faq-answer')!;
+      const icon   = trigger.querySelector('.faq-icon')!;
+      const open   = trigger.getAttribute('aria-expanded') === 'true';
+
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== item) {
+          other.querySelector('.faq-answer')!.classList.add('hidden');
+          other.querySelector('.faq-trigger')!.setAttribute('aria-expanded', 'false');
+          (other.querySelector('.faq-icon') as HTMLElement).style.transform = '';
+        }
+      });
+
+      trigger.setAttribute('aria-expanded', open ? 'false' : 'true');
+      answer.classList.toggle('hidden', open);
+      (icon as HTMLElement).style.transform = open ? '' : 'rotate(45deg)';
+    });
+  });
+</script>
