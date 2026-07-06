@@ -99,7 +99,6 @@ const faqs = [
         <form
           action="https://formspree.io/f/mkolyblg"
           method="POST"
-          enctype="multipart/form-data"
           class="space-y-6"
         >
           <div class="grid grid-cols-2 gap-5">
@@ -167,20 +166,6 @@ const faqs = [
               class="w-full border border-[#ede7db] rounded-sm px-4 py-3 text-sm text-[#211810] placeholder-[#8a7a6e] focus:outline-none focus:border-[#c8a96e] transition-colors bg-[#f5f0e8] resize-none"
               placeholder="Describe your space, what you're hoping to achieve, or any questions you have..."
             ></textarea>
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold tracking-widest uppercase text-[#211810] mb-2">
-              Inspiration Photos <span class="normal-case font-normal text-[#8a7a6e]">(optional)</span>
-            </label>
-            <div class="border border-dashed border-[#c8a96e]/50 rounded-sm px-4 py-5 bg-[#f5f0e8] text-center">
-              <input type="file" name="photos" accept="image/*" multiple class="hidden" id="photo-upload">
-              <label for="photo-upload" class="cursor-pointer">
-                <svg class="w-6 h-6 text-[#c8a96e] mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                <p class="text-sm text-[#4f4035]">Click to upload photos</p>
-                <p class="text-xs text-[#8a7a6e] mt-1">JPG, PNG, WEBP — multiple files supported</p>
-              </label>
-            </div>
           </div>
 
           <input type="hidden" name="_subject" value="New project inquiry — Casey Brothers Custom Builds">
