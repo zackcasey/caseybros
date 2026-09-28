@@ -35,9 +35,15 @@ const projects = [
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {projects.map(p => (
           <div class="group overflow-hidden rounded-sm bg-[#fdf9f5] border border-[#e6dfd4]">
-            <div class="overflow-hidden aspect-[4/3]">
+            <button
+              type="button"
+              class="lightbox-trigger block w-full overflow-hidden aspect-[4/3] cursor-zoom-in"
+              data-img={p.img}
+              data-title={p.title}
+              aria-label={`View full image: ${p.title}`}
+            >
               <img src={p.img} alt={p.title} class={`w-full h-full object-cover group-hover:scale-103 transition-transform duration-500 ${p.position ?? 'object-center'}`}>
-            </div>
+            </button>
             <div class="px-5 py-4">
               <p class="font-display font-bold text-[#211810] text-sm tracking-wide">{p.title}</p>
             </div>
@@ -46,6 +52,22 @@ const projects = [
       </div>
     </div>
   </section>
+
+  <!-- ─── Lightbox ─────────────────────────────────────────────────── -->
+  <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-[#211810]/95 items-center justify-center p-6">
+    <button
+      type="button"
+      id="lightbox-close"
+      class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+      aria-label="Close"
+    >
+      <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <figure class="max-w-5xl max-h-full flex flex-col items-center">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-sm">
+      <figcaption id="lightbox-caption" class="mt-4 text-white/80 font-display font-bold tracking-wide text-center"></figcaption>
+    </figure>
+  </div>
 
   <section class="bg-[#211810] py-20">
     <div class="mx-auto max-w-2xl px-6 text-center">
@@ -59,3 +81,39 @@ const projects = [
 
   <Footer />
 </BaseLayout>
+
+<script>
+  const lightbox        = document.getElementById('lightbox')!;
+  const lightboxImg     = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxCaption = document.getElementById('lightbox-caption')!;
+  const closeBtn        = document.getElementById('lightbox-close')!;
+
+  function openLightbox(img: string, title: string) {
+    lightboxImg.src = img;
+    lightboxImg.alt = title;
+    lightboxCaption.textContent = title;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.lightbox-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      openLightbox(trigger.dataset.img!, trigger.dataset.title!);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+  });
+</script>
