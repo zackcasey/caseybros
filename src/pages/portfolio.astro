@@ -4,22 +4,23 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
 const projects = [
-  // Top row
+  { img: '/images/cabinet-details.png',    title: 'Custom Cabinetry Detail' },
   { img: '/images/finished-entryway.png',  title: 'Finished Entryway' },
   { img: '/images/closet-builtin.png',     title: 'Closet Built-In' },
   { img: '/images/home-office-styled.png', title: 'Home Office' },
-  // Middle row
   { img: '/images/pantry-builtin.jpeg',    title: 'Custom Pantry Built-In', position: 'object-[center_15%]' },
   { img: '/images/closet-shoe-rack.png',   title: 'Custom Closet Shoe Rack' },
   { img: '/images/library-builtin.png',    title: 'Custom Built-In Library' },
-  // Bottom row
   { img: '/images/coffee-bar-lounge.png',  title: 'Coffee Bar Lounge' },
   { img: '/images/dry-bar-wide.png',       title: 'Dry Bar' },
   { img: '/images/accent-wall.jpeg',       title: 'Custom Accent Wall' },
 ];
 ---
 
-<BaseLayout title="Portfolio | Casey Brothers Custom Builds">
+<BaseLayout
+  title="Portfolio | Casey Brothers Custom Builds"
+  description="A look at custom cabinetry, built-ins, and home storage projects designed and built by Casey Brothers in Durham, NC."
+>
   <Nav />
 
   <section class="pt-32 pb-16 bg-[#f5f0e8]">

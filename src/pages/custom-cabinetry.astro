@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const projectTypes = [
+  { title: 'Custom Cabinetry', body: 'Built-in cabinets designed around your space — from media consoles to kitchen and bar storage.' },
+  { title: 'Mudrooms', body: 'Entryway storage built around your family’s daily routine, from coats and shoes to everyday clutter.' },
+  { title: 'Pantries', body: 'Organized, functional pantry storage designed to fit your kitchen and how you use it.' },
+  { title: 'Laundry Rooms', body: 'Custom cabinetry and storage that make the laundry room more functional and more finished.' },
+  { title: 'Closets', body: 'Floor-to-ceiling shelving and custom layouts designed around what you actually own.' },
+  { title: 'Home Offices', body: 'Built-in desks, shelving, and storage that turn a spare room into a dedicated workspace.' },
+  { title: 'Dry Bars', body: 'Custom bar and coffee station cabinetry designed as a centerpiece for the room.' },
+];
+---
+
+<BaseLayout
+  title="Custom Cabinetry | Casey Brothers Custom Builds"
+  description="Custom cabinetry designed and built around your home — from design through installation, in Durham, NC."
+>
+  <Nav />
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+  <section class="relative min-h-[85vh] flex items-end">
+    <img
+      src="/images/cabinet-details.png"
+      alt="Detail of custom-built cabinetry with brass hardware"
+      class="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-[#211810] via-[#211810]/60 to-[#211810]/20"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 pb-24 md:pb-32 w-full">
+      <p class="eyebrow mb-5">Our Specialty</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.05] max-w-2xl mb-6">
+        Custom Cabinetry, Built Around Your Home
+      </h1>
+      <p class="text-white/70 text-lg max-w-lg leading-relaxed mb-10">
+        Cabinetry is where we spend most of our time — designed to fit your space, your style, and how you actually live, then built and installed by the same team from start to finish.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/contact" class="inline-flex items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-sm transition-colors">
+          Start Your Project
+        </a>
+        <a href="/portfolio" class="inline-flex items-center border border-white/30 hover:border-white text-white font-semibold tracking-wider uppercase text-sm px-8 py-4 rounded transition-colors">
+          See Our Work
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── What We Build ────────────────────────────────────────────── -->
+  <section class="bg-[#faf7f2] py-28 border-b border-[#ede7db]">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-xl mb-16">
+        <p class="eyebrow mb-4">What We Build</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight">Cabinetry for Every Room in Your Home</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+        {projectTypes.map(p => (
+          <div>
+            <h3 class="font-display font-bold text-[#211810] text-lg mb-2">{p.title}</h3>
+            <p class="text-[#4f4035] text-sm leading-relaxed">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Our Approach ─────────────────────────────────────────────── -->
+  <section class="bg-[#f5f0e8] py-28">
+    <div class="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="eyebrow mb-4">Design &amp; Build</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight mb-6">Designed for Your Space, Built to Last</h2>
+        <p class="text-[#4f4035] leading-relaxed mb-4">
+          Every cabinetry project starts with a conversation about your space, your style, and your goals — not a catalog. From there, we design a layout tailored to your home, then build and install it ourselves, so every detail is coordinated from first call to final walkthrough.
+        </p>
+        <p class="text-[#4f4035] leading-relaxed mb-8">
+          Not sure what you want yet? Our <a href="/design-services" class="underline hover:text-[#211810]">Design Services</a> walk you through layouts, materials, and finishes before any cabinetry is built. You can also see how a project comes together on our <a href="/process" class="underline hover:text-[#211810]">process page</a>.
+        </p>
+        <a href="/contact" class="inline-flex items-center bg-[#211810] hover:bg-[#3d2e22] text-white font-bold tracking-widest uppercase text-sm px-8 py-4 rounded-sm transition-colors">
+          Start Your Project
+        </a>
+      </div>
+      <div class="rounded-sm overflow-hidden">
+        <img
+          src="/images/home-office-builtin.png"
+          alt="Custom home office built-in cabinetry"
+          class="w-full h-96 object-cover"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Craftsmanship & Materials ────────────────────────────────── -->
+  <section class="bg-[#faf7f2] py-28 border-t border-[#ede7db]">
+    <div class="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="rounded-sm overflow-hidden order-2 md:order-1">
+        <img
+          src="/images/cabinet-details.png"
+          alt="Close-up detail of stained custom cabinetry doors, drawers, and brass hardware"
+          class="w-full h-96 object-cover"
+        >
+      </div>
+      <div class="order-1 md:order-2">
+        <p class="eyebrow mb-4">Craftsmanship</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-[#211810] leading-tight mb-6">Materials and Details That Hold Up</h2>
+        <p class="text-[#4f4035] leading-relaxed mb-4">
+          We choose materials, finishes, and hardware to fit both your space and how you'll use it day to day. Every joint, finish, and detail is executed with precision and care — the kind that's meant to last.
+        </p>
+        <p class="text-[#4f4035] leading-relaxed">
+          You'll work directly with Zack and Logan from the first conversation through final installation, so the cabinetry you end up with matches the vision you started with.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ────────────────────────────────────────────────── -->
+  <section class="bg-[#211810] py-32">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <p class="eyebrow mb-5">Ready to Begin?</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+        Let's Design Your<br>Custom Cabinetry.
+      </h2>
+      <p class="text-white/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+        Whether you have a clear vision or just a rough idea, we'd love to hear about your space and talk through what's possible.
+      </p>
+      <a href="/contact" class="inline-flex items-center bg-[#c8a96e] hover:bg-[#a8893e] text-[#211810] font-bold tracking-widest uppercase text-sm px-10 py-4 rounded-sm transition-colors">
+        Start Your Project
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
